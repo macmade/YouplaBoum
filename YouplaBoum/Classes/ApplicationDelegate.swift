@@ -61,24 +61,6 @@ public class ApplicationDelegate: NSObject, NSApplicationDelegate, NSWindowDeleg
     }
 
     @IBAction
-    public func invertAppearance( _ sender: Any? )
-    {
-        switch NSApp.effectiveAppearance.name
-        {
-            case .aqua:                                  NSApp.appearance = NSAppearance( named: .darkAqua )
-            case .darkAqua:                              NSApp.appearance = NSAppearance( named: .aqua )
-            case .accessibilityHighContrastAqua:         NSApp.appearance = NSAppearance( named: .accessibilityHighContrastDarkAqua )
-            case .accessibilityHighContrastDarkAqua:     NSApp.appearance = NSAppearance( named: .accessibilityHighContrastAqua )
-            case .vibrantLight:                          NSApp.appearance = NSAppearance( named: .vibrantDark )
-            case .vibrantDark:                           NSApp.appearance = NSAppearance( named: .vibrantLight )
-            case .accessibilityHighContrastVibrantLight: NSApp.appearance = NSAppearance( named: .accessibilityHighContrastVibrantDark )
-            case .accessibilityHighContrastVibrantDark:  NSApp.appearance = NSAppearance( named: .accessibilityHighContrastVibrantLight )
-
-            default: NSSound.beep()
-        }
-    }
-
-    @IBAction
     public func newDocument( _ sender: Any? )
     {
         self.openDocument( sender )
