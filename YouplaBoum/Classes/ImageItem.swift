@@ -23,7 +23,6 @@
  ******************************************************************************/
 
 import Cocoa
-import UniformTypeIdentifiers
 
 @objc
 public class ImageItem: NSCollectionViewItem
