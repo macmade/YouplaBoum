@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -225,13 +226,20 @@
                                                     <real value="3.4028234663852886e+38"/>
                                                 </customSpacing>
                                             </stackView>
-                                            <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="apb-Cs-w2a">
+                                            <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="apb-Cs-w2a" customClass="NonVibrantImageView" customModule="YouplaBoum" customModuleProvider="target">
                                                 <rect key="frame" x="756" y="476" width="24" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="3CV-bN-ksG"/>
                                                     <constraint firstAttribute="height" constant="24" id="EuI-Ln-Uds"/>
                                                 </constraints>
-                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="checkmark.circle.fill" catalog="system" id="f87-wR-Cei"/>
+                                                <shadow key="shadow" blurRadius="2">
+                                                    <size key="offset" width="1" height="-1"/>
+                                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </shadow>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="f87-wR-Cei">
+                                                    <imageReference key="image" image="checkmark.circle.fill" catalog="system" symbolScale="default" renderingMode="template"/>
+                                                </imageCell>
+                                                <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <binding destination="-2" name="hidden" keyPath="self.currentImage.isSelected" id="uYq-7S-Mkh">
                                                         <dictionary key="options">

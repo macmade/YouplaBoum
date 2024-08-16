@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		055FBBA12C6F7B68003B51AC /* NonVibrantImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FBBA02C6F7B68003B51AC /* NonVibrantImageView.swift */; };
 		05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BAF2685020A00707676 /* ApplicationDelegate.swift */; };
 		05646BB52685020A00707676 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BB12685020A00707676 /* MainMenu.xib */; };
 		05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BEE2685055F00707676 /* AboutWindowController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		055FBBA02C6F7B68003B51AC /* NonVibrantImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonVibrantImageView.swift; sourceTree = "<group>"; };
 		05646B9A268501B300707676 /* YouplaBoum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouplaBoum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05646BA4268501B400707676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05646BA5268501B400707676 /* YouplaBoum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YouplaBoum.entitlements; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				05B9998C2C6EE52300DF4C08 /* ImageItem.xib */,
 				05B999762C6ED45500DF4C08 /* MainWindowController.swift */,
 				05B9997B2C6ED4BD00DF4C08 /* MainWindowController.xib */,
+				055FBBA02C6F7B68003B51AC /* NonVibrantImageView.swift */,
 				05B9998E2C6EE6C100DF4C08 /* Progress.swift */,
 				05B9997E2C6ED8D000DF4C08 /* RuntimeError.swift */,
 				05B999922C6F268400DF4C08 /* SizeToString.swift */,
@@ -410,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055FBBA12C6F7B68003B51AC /* NonVibrantImageView.swift in Sources */,
 				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
 				05B999892C6EE18D00DF4C08 /* Capsule.swift in Sources */,
 				05CB9D1F2C6F427900314AAC /* Highlight.swift in Sources */,

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,7 +13,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="c22-O7-iKe" customClass="BackgroundView" customModule="YouplaBoum" customModuleProvider="target">
+        <customView wantsLayer="YES" id="c22-O7-iKe" customClass="BackgroundView" customModule="YouplaBoum" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="80" height="45"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -28,13 +29,20 @@
                         </binding>
                     </connections>
                 </imageView>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VD4-LZ-271">
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VD4-LZ-271" customClass="NonVibrantImageView" customModule="YouplaBoum" customModuleProvider="target">
                     <rect key="frame" x="28" y="8" width="24" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="2Ph-Zu-0jt"/>
                         <constraint firstAttribute="width" constant="24" id="d3L-vk-uIb"/>
                     </constraints>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="checkmark.circle.fill" catalog="system" id="hoe-sM-9hV"/>
+                    <shadow key="shadow" blurRadius="2">
+                        <size key="offset" width="1" height="-1"/>
+                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </shadow>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="hoe-sM-9hV">
+                        <imageReference key="image" image="checkmark.circle.fill" catalog="system" symbolScale="default" renderingMode="template"/>
+                    </imageCell>
+                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <binding destination="-2" name="hidden" keyPath="self.image.isSelected" id="vkL-qd-xf1">
                             <dictionary key="options">
