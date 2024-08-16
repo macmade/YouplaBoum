@@ -27,7 +27,7 @@ import Cocoa
 @objc
 public class Highlight: NSView
 {
-    @IBInspectable public dynamic var color: NSColor = .controlAccentColor
+    @IBInspectable public dynamic var color: NSColor = .systemBlue
     {
         didSet
         {
