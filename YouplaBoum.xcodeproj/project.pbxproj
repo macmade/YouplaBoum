@@ -109,6 +109,9 @@
 		05B999942C6F268E00DF4C08 /* BytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytesToString.swift; sourceTree = "<group>"; };
 		05CB9D1E2C6F427900314AAC /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		05CB9D202C6F48F800314AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05CB9D3B2C6F4AB100314AAC /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		05CB9D3C2C6F4AB100314AAC /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		05CB9D3D2C6F4AB100314AAC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,9 @@
 		05646B91268501B300707676 = {
 			isa = PBXGroup;
 			children = (
+				05CB9D3D2C6F4AB100314AAC /* README.md */,
+				05CB9D3C2C6F4AB100314AAC /* LICENSE */,
+				05CB9D3B2C6F4AB100314AAC /* CODE_OF_CONDUCT.md */,
 				05646BB7268503D300707676 /* xcconfig */,
 				05646B9C268501B300707676 /* YouplaBoum */,
 				05646B9B268501B300707676 /* Products */,

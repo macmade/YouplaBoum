@@ -10,7 +10,13 @@ YouplaBoum!
 
 ### About
 
-Like Tinder, but for your photos...
+**Like Tinder, but for your photos...**
+
+Usage:
+  - Use the arrow keys to navigate between images.
+  - Use the space bar to select/deselect an image.
+
+![Screenshot](Assets/Screenshot.png "Screenshot")
 
 License
 -------
