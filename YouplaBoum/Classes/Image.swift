@@ -38,6 +38,7 @@ public class Image: NSObject
     @objc public private( set ) dynamic var source:        NSImage?
     @objc public private( set ) dynamic var thumbnail:     NSImage?
     @objc public private( set ) dynamic var averageColor:  NSColor
+    @objc public private( set ) dynamic var tags:          [ MetadataTag ]
     @objc public                dynamic var isSelected:    Bool
     @objc public                dynamic var isHighlighted: Bool
     @objc public                dynamic var trashed:       Bool
@@ -73,6 +74,16 @@ public class Image: NSObject
         self.isHighlighted = false
         self.trashed       = false
         self.averageColor  = .black
+
+        if let source   = CGImageSourceCreateWithURL( url as NSURL, nil ), CGImageSourceGetStatus( source ) == .statusComplete,
+           let metadata = CGImageSourceCopyMetadataAtIndex( source, 0, nil )
+        {
+            self.tags = MetadataTag.tags( for: metadata )
+        }
+        else
+        {
+            self.tags = []
+        }
     }
 
     public func loadSourceImage()

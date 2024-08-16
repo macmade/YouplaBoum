@@ -32,6 +32,7 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
     @objc private dynamic var info:          String?
     @objc private dynamic var images       = [ Image ]()
     @objc private dynamic var items        = [ ImageItem ]()
+    @objc private dynamic var showInfo     = false
     @objc private dynamic var currentImage:  Image?
     @objc private dynamic var currentIndex = -1
     {
@@ -57,8 +58,9 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
                     $0.isHighlighted = $0 === current
                 }
 
-                self.currentImage = current
-                self.info         = "\( self.currentIndex + 1 ) of \( self.images.count )"
+                self.currentImage            = current
+                self.infoViewController.tags = current.tags
+                self.info                    = "\( self.currentIndex + 1 ) of \( self.images.count )"
 
                 if self.collectionView?.numberOfItems( inSection: 0 ) ?? 0 > self.currentIndex
                 {
@@ -69,16 +71,19 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
             }
             else
             {
-                self.currentImage = nil
-                self.info         = nil
+                self.currentImage            = nil
+                self.infoViewController.tags = []
+                self.info                    = nil
             }
         }
     }
 
     private var averageColorObserver: NSKeyValueObservation?
+    private var infoViewController  = InfoViewController()
 
     @IBOutlet private var collectionView:      NSCollectionView?
     @IBOutlet private var imageBackgroundView: BackgroundView?
+    @IBOutlet private var infoViewContainer:   NSView?
 
     public init( url: URL )
     {
@@ -109,6 +114,8 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
             [ weak self ] _, _ in self?.imageBackgroundView?.color = self?.currentImage?.averageColor ?? .black
         }
 
+        self.infoViewContainer?.addFillingSubview( self.infoViewController.view )
+
         NSEvent.addLocalMonitorForEvents( matching: .keyDown )
         {
             guard $0.window === self.window
@@ -138,6 +145,12 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
 
             return $0
         }
+    }
+
+    @IBAction
+    private func showInfo( _ sender: Any? )
+    {
+        self.showInfo.toggle()
     }
 
     @IBAction

@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="collectionView" destination="w24-IQ-GrK" id="vux-v9-umf"/>
                 <outlet property="imageBackgroundView" destination="XuP-IS-k4X" id="rJt-88-fr2"/>
+                <outlet property="infoViewContainer" destination="xcz-Ae-qcT" id="B3w-31-FTH"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="Wkc-Rf-cl3"/>
             </connections>
         </customObject>
@@ -362,21 +363,37 @@
                                                     <constraint firstItem="wOD-G7-fIu" firstAttribute="top" secondItem="Jxs-I9-jU4" secondAttribute="top" constant="20" symbolic="YES" id="wkj-xm-GVK"/>
                                                 </constraints>
                                             </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="xcz-Ae-qcT">
+                                                <rect key="frame" x="20" y="72" width="300" height="399"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="mUR-oK-E8Q"/>
+                                                </constraints>
+                                                <connections>
+                                                    <binding destination="-2" name="hidden" keyPath="self.showInfo" id="Voa-T6-dSb">
+                                                        <dictionary key="options">
+                                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                        </dictionary>
+                                                    </binding>
+                                                </connections>
+                                            </customView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="xcz-Ae-qcT" firstAttribute="leading" secondItem="XuP-IS-k4X" secondAttribute="leading" constant="20" symbolic="YES" id="0Id-c0-nR3"/>
                                             <constraint firstAttribute="bottom" secondItem="a2B-Al-fBE" secondAttribute="bottom" id="5Ca-DI-nLz"/>
                                             <constraint firstAttribute="trailing" secondItem="apb-Cs-w2a" secondAttribute="trailing" constant="20" symbolic="YES" id="8b8-Vt-5sj"/>
                                             <constraint firstAttribute="trailing" secondItem="a2B-Al-fBE" secondAttribute="trailing" id="Mkf-kq-TKB"/>
                                             <constraint firstItem="a2B-Al-fBE" firstAttribute="leading" secondItem="XuP-IS-k4X" secondAttribute="leading" id="Mux-U0-muw"/>
                                             <constraint firstItem="lO6-Fh-YxI" firstAttribute="centerX" secondItem="XuP-IS-k4X" secondAttribute="centerX" id="RIn-ta-jkY"/>
+                                            <constraint firstItem="Jxs-I9-jU4" firstAttribute="top" secondItem="xcz-Ae-qcT" secondAttribute="bottom" constant="8" symbolic="YES" id="U2u-zT-qWY"/>
                                             <constraint firstItem="a2B-Al-fBE" firstAttribute="top" secondItem="XuP-IS-k4X" secondAttribute="top" id="bcQ-zK-xwE"/>
                                             <constraint firstItem="apb-Cs-w2a" firstAttribute="centerY" secondItem="lO6-Fh-YxI" secondAttribute="centerY" id="dNx-SQ-Nae"/>
                                             <constraint firstAttribute="trailing" secondItem="Jxs-I9-jU4" secondAttribute="trailing" id="evp-W1-G7J"/>
                                             <constraint firstItem="apb-Cs-w2a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lO6-Fh-YxI" secondAttribute="trailing" constant="8" symbolic="YES" id="jag-QZ-bia"/>
-                                            <constraint firstItem="lO6-Fh-YxI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XuP-IS-k4X" secondAttribute="leading" constant="75" id="oaR-1Q-GDR"/>
+                                            <constraint firstItem="lO6-Fh-YxI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XuP-IS-k4X" secondAttribute="leading" constant="20" symbolic="YES" id="mRu-Y7-w0B"/>
                                             <constraint firstItem="Jxs-I9-jU4" firstAttribute="leading" secondItem="XuP-IS-k4X" secondAttribute="leading" id="oas-KW-Fea"/>
                                             <constraint firstItem="lO6-Fh-YxI" firstAttribute="top" secondItem="XuP-IS-k4X" secondAttribute="top" constant="30" id="ocR-yU-xXB"/>
                                             <constraint firstAttribute="bottom" secondItem="Jxs-I9-jU4" secondAttribute="bottom" id="td8-C0-mzg"/>
+                                            <constraint firstItem="xcz-Ae-qcT" firstAttribute="top" secondItem="lO6-Fh-YxI" secondAttribute="bottom" constant="8" symbolic="YES" id="tdt-UO-jPq"/>
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="70c-8T-qet" customClass="BackgroundView" customModule="YouplaBoum" customModuleProvider="target">
@@ -404,7 +421,7 @@
                                                     </subviews>
                                                 </clipView>
                                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="uUk-Cc-vCw">
-                                                    <rect key="frame" x="0.0" y="44" width="370" height="16"/>
+                                                    <rect key="frame" x="0.0" y="44" width="752" height="16"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="ggA-eV-bTq">
@@ -468,7 +485,7 @@
                     <constraint firstItem="dve-xt-hvi" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="kyE-cQ-q1m"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="377" y="162"/>
+            <point key="canvasLocation" x="377" y="161.5"/>
         </window>
     </objects>
     <resources>
