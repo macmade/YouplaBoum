@@ -25,19 +25,27 @@
 import Cocoa
 
 @main
-public class ApplicationDelegate: NSObject, NSApplicationDelegate
+public class ApplicationDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate
 {
     @objc private dynamic var aboutWindowController = AboutWindowController()
+    @objc private dynamic var windowControllers     = [ MainWindowController ]()
 
     public func applicationDidFinishLaunching( _ notification: Notification )
-    {}
+    {
+        self.openDocument( nil )
+    }
 
     public func applicationWillTerminate( _ notification: Notification )
     {}
 
     public func applicationShouldTerminateAfterLastWindowClosed( _ sender: NSApplication ) -> Bool
     {
-        true
+        false
+    }
+
+    public func applicationSupportsSecureRestorableState( _ app: NSApplication ) -> Bool
+    {
+        false
     }
 
     @IBAction
@@ -67,6 +75,47 @@ public class ApplicationDelegate: NSObject, NSApplicationDelegate
             case .accessibilityHighContrastVibrantDark:  NSApp.appearance = NSAppearance( named: .accessibilityHighContrastVibrantLight )
 
             default: NSSound.beep()
+        }
+    }
+
+    @IBAction
+    public func newDocument( _ sender: Any? )
+    {
+        self.openDocument( sender )
+    }
+
+    @IBAction
+    public func openDocument( _ sender: Any? )
+    {
+        let panel                     = NSOpenPanel()
+        panel.canChooseFiles          = false
+        panel.canChooseDirectories    = true
+        panel.allowsMultipleSelection = false
+
+        guard panel.runModal() == .OK, let url = panel.url
+        else
+        {
+            return
+        }
+
+        let controller              = MainWindowController( url: url )
+        controller.window?.delegate = self
+
+        self.windowControllers.append( controller )
+        controller.window?.makeKeyAndOrderFront( sender )
+    }
+
+    public func windowWillClose( _ notification: Notification )
+    {
+        guard let window = notification.object as? NSWindow
+        else
+        {
+            return
+        }
+
+        self.windowControllers.removeAll
+        {
+            $0.window === window
         }
     }
 }

@@ -11,6 +11,21 @@
 		05646BB52685020A00707676 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BB12685020A00707676 /* MainMenu.xib */; };
 		05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BEE2685055F00707676 /* AboutWindowController.swift */; };
 		05646BF22685058700707676 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BF02685058700707676 /* AboutWindowController.xib */; };
+		05B999772C6ED45500DF4C08 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B999762C6ED45500DF4C08 /* MainWindowController.swift */; };
+		05B9997C2C6ED4BD00DF4C08 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B9997B2C6ED4BD00DF4C08 /* MainWindowController.xib */; };
+		05B9997F2C6ED8D000DF4C08 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9997E2C6ED8D000DF4C08 /* RuntimeError.swift */; };
+		05B999832C6EDF3300DF4C08 /* BlackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B999822C6EDF3300DF4C08 /* BlackView.swift */; };
+		05B999852C6EDFC100DF4C08 /* ArrayIsEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B999842C6EDFC100DF4C08 /* ArrayIsEmpty.swift */; };
+		05B999872C6EE01600DF4C08 /* ArrayIsNotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B999862C6EE01600DF4C08 /* ArrayIsNotEmpty.swift */; };
+		05B999892C6EE18D00DF4C08 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B999882C6EE18D00DF4C08 /* Capsule.swift */; };
+		05B9998B2C6EE46A00DF4C08 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9998A2C6EE46A00DF4C08 /* Image.swift */; };
+		05B9998D2C6EE52300DF4C08 /* ImageItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B9998C2C6EE52300DF4C08 /* ImageItem.xib */; };
+		05B9998F2C6EE6C100DF4C08 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9998E2C6EE6C100DF4C08 /* Progress.swift */; };
+		05B999912C6EFD5100DF4C08 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B999902C6EFD5100DF4C08 /* ImageItem.swift */; };
+		05B999932C6F268400DF4C08 /* SizeToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B999922C6F268400DF4C08 /* SizeToString.swift */; };
+		05B999952C6F268E00DF4C08 /* BytesToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B999942C6F268E00DF4C08 /* BytesToString.swift */; };
+		05CB9D1F2C6F427900314AAC /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB9D1E2C6F427900314AAC /* Highlight.swift */; };
+		05CB9D212C6F48F800314AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05CB9D202C6F48F800314AAC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +94,21 @@
 		05646BEE2685055F00707676 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		05646BF12685058700707676 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutWindowController.xib; sourceTree = "<group>"; };
 		05646C03268527E400707676 /* YouplaBoum-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YouplaBoum-Bridging-Header.h"; sourceTree = "<group>"; };
+		05B999762C6ED45500DF4C08 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		05B9997A2C6ED4BD00DF4C08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
+		05B9997E2C6ED8D000DF4C08 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
+		05B999822C6EDF3300DF4C08 /* BlackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackView.swift; sourceTree = "<group>"; };
+		05B999842C6EDFC100DF4C08 /* ArrayIsEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayIsEmpty.swift; sourceTree = "<group>"; };
+		05B999862C6EE01600DF4C08 /* ArrayIsNotEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayIsNotEmpty.swift; sourceTree = "<group>"; };
+		05B999882C6EE18D00DF4C08 /* Capsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
+		05B9998A2C6EE46A00DF4C08 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		05B9998C2C6EE52300DF4C08 /* ImageItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageItem.xib; sourceTree = "<group>"; };
+		05B9998E2C6EE6C100DF4C08 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		05B999902C6EFD5100DF4C08 /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
+		05B999922C6F268400DF4C08 /* SizeToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeToString.swift; sourceTree = "<group>"; };
+		05B999942C6F268E00DF4C08 /* BytesToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytesToString.swift; sourceTree = "<group>"; };
+		05CB9D1E2C6F427900314AAC /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
+		05CB9D202C6F48F800314AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +152,23 @@
 		05646BAD2685020A00707676 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				05646BF02685058700707676 /* AboutWindowController.xib */,
 				05646BEE2685055F00707676 /* AboutWindowController.swift */,
+				05646BF02685058700707676 /* AboutWindowController.xib */,
 				05646BAF2685020A00707676 /* ApplicationDelegate.swift */,
+				05B999842C6EDFC100DF4C08 /* ArrayIsEmpty.swift */,
+				05B999862C6EE01600DF4C08 /* ArrayIsNotEmpty.swift */,
+				05B999822C6EDF3300DF4C08 /* BlackView.swift */,
+				05B999942C6F268E00DF4C08 /* BytesToString.swift */,
+				05B999882C6EE18D00DF4C08 /* Capsule.swift */,
+				05CB9D1E2C6F427900314AAC /* Highlight.swift */,
+				05B9998A2C6EE46A00DF4C08 /* Image.swift */,
+				05B999902C6EFD5100DF4C08 /* ImageItem.swift */,
+				05B9998C2C6EE52300DF4C08 /* ImageItem.xib */,
+				05B999762C6ED45500DF4C08 /* MainWindowController.swift */,
+				05B9997B2C6ED4BD00DF4C08 /* MainWindowController.xib */,
+				05B9998E2C6EE6C100DF4C08 /* Progress.swift */,
+				05B9997E2C6ED8D000DF4C08 /* RuntimeError.swift */,
+				05B999922C6F268400DF4C08 /* SizeToString.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -132,6 +176,7 @@
 		05646BB62685021500707676 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				05CB9D202C6F48F800314AAC /* Assets.xcassets */,
 				05646BA4268501B400707676 /* Info.plist */,
 				05646BB12685020A00707676 /* MainMenu.xib */,
 				05646C03268527E400707676 /* YouplaBoum-Bridging-Header.h */,
@@ -323,8 +368,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B9998D2C6EE52300DF4C08 /* ImageItem.xib in Resources */,
 				05646BB52685020A00707676 /* MainMenu.xib in Resources */,
+				05B9997C2C6ED4BD00DF4C08 /* MainWindowController.xib in Resources */,
 				05646BF22685058700707676 /* AboutWindowController.xib in Resources */,
+				05CB9D212C6F48F800314AAC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +405,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
+				05B999892C6EE18D00DF4C08 /* Capsule.swift in Sources */,
+				05CB9D1F2C6F427900314AAC /* Highlight.swift in Sources */,
+				05B999832C6EDF3300DF4C08 /* BlackView.swift in Sources */,
+				05B9998B2C6EE46A00DF4C08 /* Image.swift in Sources */,
+				05B999872C6EE01600DF4C08 /* ArrayIsNotEmpty.swift in Sources */,
+				05B999952C6F268E00DF4C08 /* BytesToString.swift in Sources */,
+				05B9998F2C6EE6C100DF4C08 /* Progress.swift in Sources */,
+				05B999912C6EFD5100DF4C08 /* ImageItem.swift in Sources */,
+				05B999852C6EDFC100DF4C08 /* ArrayIsEmpty.swift in Sources */,
 				05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */,
+				05B999772C6ED45500DF4C08 /* MainWindowController.swift in Sources */,
+				05B999932C6F268400DF4C08 /* SizeToString.swift in Sources */,
+				05B9997F2C6ED8D000DF4C08 /* RuntimeError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +440,14 @@
 			name = AboutWindowController.xib;
 			sourceTree = "<group>";
 		};
+		05B9997B2C6ED4BD00DF4C08 /* MainWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05B9997A2C6ED4BD00DF4C08 /* Base */,
+			);
+			name = MainWindowController.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -387,7 +455,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05646BBB268503D300707676 /* Debug.xcconfig */;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 			};
 			name = Debug;
 		};
@@ -395,13 +463,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05646BBC268503D300707676 /* Release.xcconfig */;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 			};
 			name = Release;
 		};
 		05646BA9268501B400707676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = YouplaBoum/YouplaBoum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -423,6 +493,8 @@
 		05646BAA268501B400707676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = YouplaBoum/YouplaBoum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
