@@ -32,7 +32,7 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
     @objc private dynamic var info:          String?
     @objc private dynamic var images       = [ Image ]()
     @objc private dynamic var items        = [ ImageItem ]()
-    @objc private dynamic var showInfo     = false
+    @objc private dynamic var showInfo     = Preferences.shared.showInfo
     @objc private dynamic var currentImage:  Image?
     @objc private dynamic var currentIndex = -1
     {
@@ -155,6 +155,8 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
     private func showInfo( _ sender: Any? )
     {
         self.showInfo.toggle()
+
+        Preferences.shared.showInfo = self.showInfo
     }
 
     @IBAction

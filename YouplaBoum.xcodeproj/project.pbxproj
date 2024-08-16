@@ -13,6 +13,7 @@
 		055FBBA72C6F82B7003B51AC /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FBBA62C6F82B7003B51AC /* NSView.swift */; };
 		055FBBA92C6F84C5003B51AC /* MetadataTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FBBA82C6F84C5003B51AC /* MetadataTag.swift */; };
 		055FBBAB2C6F89BC003B51AC /* MetadataTagValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FBBAA2C6F89BC003B51AC /* MetadataTagValue.swift */; };
+		055FBBAD2C6FC380003B51AC /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FBBAC2C6FC380003B51AC /* Preferences.swift */; };
 		05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BAF2685020A00707676 /* ApplicationDelegate.swift */; };
 		05646BB52685020A00707676 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05646BB12685020A00707676 /* MainMenu.xib */; };
 		05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05646BEE2685055F00707676 /* AboutWindowController.swift */; };
@@ -54,6 +55,7 @@
 		055FBBA62C6F82B7003B51AC /* NSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
 		055FBBA82C6F84C5003B51AC /* MetadataTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataTag.swift; sourceTree = "<group>"; };
 		055FBBAA2C6F89BC003B51AC /* MetadataTagValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataTagValue.swift; sourceTree = "<group>"; };
+		055FBBAC2C6FC380003B51AC /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		05646B9A268501B300707676 /* YouplaBoum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouplaBoum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05646BA4268501B400707676 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05646BA5268501B400707676 /* YouplaBoum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YouplaBoum.entitlements; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				055FBBA22C6F81F1003B51AC /* InfoViewController.swift */,
 				055FBBA42C6F81FD003B51AC /* InfoViewController.xib */,
 				05B999762C6ED45500DF4C08 /* MainWindowController.swift */,
+				055FBBAC2C6FC380003B51AC /* Preferences.swift */,
 				05B9997B2C6ED4BD00DF4C08 /* MainWindowController.xib */,
 				055FBBA82C6F84C5003B51AC /* MetadataTag.swift */,
 				055FBBAA2C6F89BC003B51AC /* MetadataTagValue.swift */,
@@ -431,6 +434,7 @@
 			files = (
 				055FBBA12C6F7B68003B51AC /* NonVibrantImageView.swift in Sources */,
 				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
+				055FBBAD2C6FC380003B51AC /* Preferences.swift in Sources */,
 				05B999892C6EE18D00DF4C08 /* Capsule.swift in Sources */,
 				055FBBA72C6F82B7003B51AC /* NSView.swift in Sources */,
 				05CB9D1F2C6F427900314AAC /* Highlight.swift in Sources */,
