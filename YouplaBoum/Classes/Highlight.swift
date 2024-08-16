@@ -27,12 +27,20 @@ import Cocoa
 @objc
 public class Highlight: NSView
 {
+    @IBInspectable public dynamic var color: NSColor = .controlAccentColor
+    {
+        didSet
+        {
+            self.needsDisplay = true
+        }
+    }
+
     public override func draw( _ rect: NSRect )
     {
         let path       = NSBezierPath( rect: self.bounds.insetBy( dx: 1, dy: 1 ) )
         path.lineWidth = 2
 
-        NSColor.controlAccentColor.setStroke()
+        self.color.setStroke()
         path.stroke()
     }
 }

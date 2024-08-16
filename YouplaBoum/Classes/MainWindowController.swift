@@ -60,7 +60,8 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
 
                 self.currentImage            = current
                 self.infoViewController.tags = current.tags
-                self.info                    = "\( self.currentIndex + 1 ) of \( self.images.count )"
+
+                self.updateInfo()
 
                 if self.collectionView?.numberOfItems( inSection: 0 ) ?? 0 > self.currentIndex
                 {
@@ -81,9 +82,9 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
     private var averageColorObserver: NSKeyValueObservation?
     private var infoViewController  = InfoViewController()
 
-    @IBOutlet private var collectionView:      NSCollectionView?
-    @IBOutlet private var imageBackgroundView: BackgroundView?
-    @IBOutlet private var infoViewContainer:   NSView?
+    @IBOutlet private var collectionView:        NSCollectionView?
+    @IBOutlet private var imageBackgroundView:   BackgroundView?
+    @IBOutlet private var infoViewContainer:     NSView?
 
     public init( url: URL )
     {
@@ -111,7 +112,9 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
 
         self.averageColorObserver = self.observe( \.currentImage?.averageColor )
         {
-            [ weak self ] _, _ in self?.imageBackgroundView?.color = self?.currentImage?.averageColor ?? .black
+            [ weak self ] _, _ in
+
+            self?.imageBackgroundView?.color = self?.currentImage?.averageColor ?? .black
         }
 
         self.infoViewContainer?.addFillingSubview( self.infoViewController.view )
@@ -139,6 +142,7 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
             else if $0.keyCode == 49 // Space
             {
                 self.currentImage?.isSelected.toggle()
+                self.updateInfo()
 
                 return nil
             }
@@ -179,6 +183,8 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
                 {
                     $0.isSelected = false
                 }
+
+                self.updateInfo()
             }
         }
     }
@@ -261,10 +267,22 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
 
                         self.currentIndex = 0
                         self.progress     = nil
+
+                        self.updateInfo()
                     }
                 }
             }
         }
+    }
+
+    private func updateInfo()
+    {
+        let selected = self.images.reduce( 0 )
+        {
+            $1.isSelected ? $0 + 1 : $0
+        }
+
+        self.info = "\( self.currentIndex + 1 ) of \( self.images.count ) - \( selected ) Selected"
     }
 
     private func previous()

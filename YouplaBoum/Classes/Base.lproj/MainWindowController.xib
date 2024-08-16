@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -105,22 +104,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="800" height="593"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="XuP-IS-k4X" customClass="BackgroundView" customModule="YouplaBoum" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="800" height="533"/>
+                                        <rect key="frame" x="0.0" y="65" width="800" height="528"/>
                                         <subviews>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="a2B-Al-fBE">
-                                                <rect key="frame" x="0.0" y="0.0" width="800" height="533"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="800" height="528"/>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="APO-UU-s9g"/>
                                                 <connections>
                                                     <binding destination="-2" name="value" keyPath="self.currentImage.source" id="ya4-Vw-Kld"/>
                                                 </connections>
                                             </imageView>
                                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lO6-Fh-YxI">
-                                                <rect key="frame" x="290" y="479" width="220" height="24"/>
+                                                <rect key="frame" x="290" y="474" width="220" height="24"/>
                                                 <subviews>
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="cZe-pB-yR5" customClass="Capsule" customModule="YouplaBoum" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="49" height="24"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="O5q-vI-Gnv">
+                                                            <textField wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="O5q-vI-Gnv">
                                                                 <rect key="frame" x="8" y="5" width="33" height="14"/>
                                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" title="Label" id="FBv-rc-vnv">
                                                                     <font key="font" metaFont="smallSystem"/>
@@ -142,7 +141,7 @@
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Km6-KV-iWw" customClass="Capsule" customModule="YouplaBoum" customModuleProvider="target">
                                                         <rect key="frame" x="57" y="0.0" width="49" height="24"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="S2c-Xx-r18">
+                                                            <textField wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="S2c-Xx-r18">
                                                                 <rect key="frame" x="8" y="5" width="33" height="14"/>
                                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" title="Label" id="PDd-Iy-SZm">
                                                                     <font key="font" metaFont="smallSystem"/>
@@ -164,7 +163,7 @@
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="nUg-55-IO9" customClass="Capsule" customModule="YouplaBoum" customModuleProvider="target">
                                                         <rect key="frame" x="114" y="0.0" width="49" height="24"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="V6t-7c-P5I">
+                                                            <textField wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="V6t-7c-P5I">
                                                                 <rect key="frame" x="8" y="5" width="33" height="14"/>
                                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" title="Label" id="4Sh-GR-qJ9">
                                                                     <font key="font" metaFont="smallSystem"/>
@@ -190,7 +189,7 @@
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="D3h-Ar-rfh" customClass="Capsule" customModule="YouplaBoum" customModuleProvider="target">
                                                         <rect key="frame" x="171" y="0.0" width="49" height="24"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="DM0-wy-qDX">
+                                                            <textField wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="DM0-wy-qDX">
                                                                 <rect key="frame" x="8" y="5" width="33" height="14"/>
                                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" title="Label" id="g3x-Mp-uxP">
                                                                     <font key="font" metaFont="smallSystem"/>
@@ -228,7 +227,7 @@
                                                 </customSpacing>
                                             </stackView>
                                             <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="apb-Cs-w2a" customClass="NonVibrantImageView" customModule="YouplaBoum" customModuleProvider="target">
-                                                <rect key="frame" x="756" y="476" width="24" height="30"/>
+                                                <rect key="frame" x="756" y="471" width="24" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="3CV-bN-ksG"/>
                                                     <constraint firstAttribute="height" constant="24" id="EuI-Ln-Uds"/>
@@ -286,14 +285,14 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                                                <color key="value" name="unemphasizedSelectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="value" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </customView>
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="gbP-v0-X5S" customClass="Capsule" customModule="YouplaBoum" customModuleProvider="target">
                                                         <rect key="frame" x="376" y="20" width="49" height="24"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="eMZ-Zv-ps6">
+                                                            <textField wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="eMZ-Zv-ps6">
                                                                 <rect key="frame" x="8" y="5" width="33" height="14"/>
                                                                 <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" title="Label" id="Pqr-5a-J4u">
                                                                     <font key="font" metaFont="smallSystem"/>
@@ -364,7 +363,7 @@
                                                 </constraints>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="xcz-Ae-qcT">
-                                                <rect key="frame" x="20" y="72" width="300" height="399"/>
+                                                <rect key="frame" x="20" y="64" width="300" height="390"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="mUR-oK-E8Q"/>
                                                 </constraints>
@@ -384,7 +383,7 @@
                                             <constraint firstAttribute="trailing" secondItem="a2B-Al-fBE" secondAttribute="trailing" id="Mkf-kq-TKB"/>
                                             <constraint firstItem="a2B-Al-fBE" firstAttribute="leading" secondItem="XuP-IS-k4X" secondAttribute="leading" id="Mux-U0-muw"/>
                                             <constraint firstItem="lO6-Fh-YxI" firstAttribute="centerX" secondItem="XuP-IS-k4X" secondAttribute="centerX" id="RIn-ta-jkY"/>
-                                            <constraint firstItem="Jxs-I9-jU4" firstAttribute="top" secondItem="xcz-Ae-qcT" secondAttribute="bottom" constant="8" symbolic="YES" id="U2u-zT-qWY"/>
+                                            <constraint firstItem="Jxs-I9-jU4" firstAttribute="top" secondItem="xcz-Ae-qcT" secondAttribute="bottom" id="U2u-zT-qWY"/>
                                             <constraint firstItem="a2B-Al-fBE" firstAttribute="top" secondItem="XuP-IS-k4X" secondAttribute="top" id="bcQ-zK-xwE"/>
                                             <constraint firstItem="apb-Cs-w2a" firstAttribute="centerY" secondItem="lO6-Fh-YxI" secondAttribute="centerY" id="dNx-SQ-Nae"/>
                                             <constraint firstAttribute="trailing" secondItem="Jxs-I9-jU4" secondAttribute="trailing" id="evp-W1-G7J"/>
@@ -393,20 +392,20 @@
                                             <constraint firstItem="Jxs-I9-jU4" firstAttribute="leading" secondItem="XuP-IS-k4X" secondAttribute="leading" id="oas-KW-Fea"/>
                                             <constraint firstItem="lO6-Fh-YxI" firstAttribute="top" secondItem="XuP-IS-k4X" secondAttribute="top" constant="30" id="ocR-yU-xXB"/>
                                             <constraint firstAttribute="bottom" secondItem="Jxs-I9-jU4" secondAttribute="bottom" id="td8-C0-mzg"/>
-                                            <constraint firstItem="xcz-Ae-qcT" firstAttribute="top" secondItem="lO6-Fh-YxI" secondAttribute="bottom" constant="8" symbolic="YES" id="tdt-UO-jPq"/>
+                                            <constraint firstItem="xcz-Ae-qcT" firstAttribute="top" secondItem="lO6-Fh-YxI" secondAttribute="bottom" constant="20" id="tdt-UO-jPq"/>
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="70c-8T-qet" customClass="BackgroundView" customModule="YouplaBoum" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="800" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="800" height="65"/>
                                         <subviews>
                                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oab-uq-gld">
-                                                <rect key="frame" x="0.0" y="0.0" width="800" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="800" height="65"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="te3-38-Zfe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="800" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="800" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <collectionView selectable="YES" id="w24-IQ-GrK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="800" height="60"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="800" height="65"/>
                                                             <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                                             <collectionViewGridLayout key="collectionViewLayout" maximumNumberOfRows="1" id="cQM-os-Su9">
                                                                 <size key="minimumItemSize" width="120" height="60"/>
@@ -435,7 +434,7 @@
                                             <constraint firstItem="Oab-uq-gld" firstAttribute="top" secondItem="70c-8T-qet" secondAttribute="top" id="FCW-fC-Bdu"/>
                                             <constraint firstAttribute="trailing" secondItem="Oab-uq-gld" secondAttribute="trailing" id="i2j-M4-ezB"/>
                                             <constraint firstAttribute="bottom" secondItem="Oab-uq-gld" secondAttribute="bottom" id="iKN-Tw-pKr"/>
-                                            <constraint firstAttribute="height" constant="60" id="iOE-zj-6Mg"/>
+                                            <constraint firstAttribute="height" constant="65" id="iOE-zj-6Mg"/>
                                         </constraints>
                                     </customView>
                                 </subviews>

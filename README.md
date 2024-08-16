@@ -15,6 +15,7 @@ YouplaBoum!
 Usage:
   - Use the arrow keys to navigate between images.
   - Use the space bar to select/deselect an image.
+  - Click "Process Selected Images" and choose what you want to do with the selected images.
 
 ![Screenshot](Assets/Screenshot.png "Screenshot")
 

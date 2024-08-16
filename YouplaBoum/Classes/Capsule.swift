@@ -27,8 +27,21 @@ import Cocoa
 @objc
 public class Capsule: NSView
 {
-    @IBInspectable public dynamic var borderColor:     NSColor = .white
+    @IBInspectable public dynamic var borderColor: NSColor = .white
+    {
+        didSet
+        {
+            self.needsDisplay = true
+        }
+    }
+
     @IBInspectable public dynamic var backgroundColor: NSColor = .black.withAlphaComponent( 0.3 )
+    {
+        didSet
+        {
+            self.needsDisplay = true
+        }
+    }
 
     public override func draw( _ rect: NSRect )
     {
