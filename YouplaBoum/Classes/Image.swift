@@ -37,6 +37,7 @@ public class Image: NSObject
     @objc public private( set ) dynamic var bytes:         Int
     @objc public private( set ) dynamic var source:        NSImage?
     @objc public private( set ) dynamic var thumbnail:     NSImage?
+    @objc public private( set ) dynamic var averageColor:  NSColor
     @objc public                dynamic var isSelected:    Bool
     @objc public                dynamic var isHighlighted: Bool
     @objc public                dynamic var trashed:       Bool
@@ -71,6 +72,7 @@ public class Image: NSObject
         self.isSelected    = false
         self.isHighlighted = false
         self.trashed       = false
+        self.averageColor  = .black
     }
 
     public func loadSourceImage()
@@ -106,10 +108,13 @@ public class Image: NSObject
             source.draw( in: NSRect( x: 0, y: 0, width: thumbnail.size.width, height: thumbnail.size.height ) )
             thumbnail.unlockFocus()
 
+            let average = self.getAverageColor( image: thumbnail )
+
             DispatchQueue.main.async
             {
                 self.thumbnail          = thumbnail
                 self.thumbnailOperation = nil
+                self.averageColor       = average ?? .black
             }
         }
 
@@ -121,5 +126,33 @@ public class Image: NSObject
     public func cancelThumbnailGeneration()
     {
         self.thumbnailOperation?.cancel()
+    }
+
+    // Code borrowed from an article by Paul Hudson
+    // See: https: // www.hackingwithswift.com/example-code/media/how-to-read-the-average-color-of-a-uiimage-using-ciareaaverage
+    private func getAverageColor( image: NSImage ) -> NSColor?
+    {
+        guard let cgImage = image.cgImage( forProposedRect: nil, context: nil, hints: nil )
+        else
+        {
+            return nil
+        }
+
+        let inputImage   = CIImage( cgImage: cgImage )
+        let extentVector = CIVector( x: inputImage.extent.origin.x, y: inputImage.extent.origin.y, z: inputImage.extent.size.width, w: inputImage.extent.size.height )
+
+        guard let filter      = CIFilter( name: "CIAreaAverage", parameters: [ kCIInputImageKey: inputImage, kCIInputExtentKey: extentVector ] ),
+              let outputImage = filter.outputImage
+        else
+        {
+            return nil
+        }
+
+        var bitmap  = [ UInt8 ]( repeating: 0, count: 4 )
+        let context = CIContext( options: [ : ] )
+
+        context.render( outputImage, toBitmap: &bitmap, rowBytes: 4, bounds: CGRect( x: 0, y: 0, width: 1, height: 1 ), format: .RGBA8, colorSpace: nil )
+
+        return NSColor( red: CGFloat( bitmap[ 0 ] ) / 255, green: CGFloat( bitmap[ 1 ] ) / 255, blue: CGFloat( bitmap[ 2 ] ) / 255, alpha: CGFloat( bitmap[ 3 ] ) / 255 )
     }
 }

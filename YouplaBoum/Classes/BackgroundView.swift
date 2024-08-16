@@ -25,9 +25,9 @@
 import Cocoa
 
 @objc
-public class BlackView: NSView
+public class BackgroundView: NSView
 {
-    @IBInspectable public dynamic var alpha: Double = 1.0
+    @IBInspectable public dynamic var color: NSColor = .black
     {
         didSet
         {
@@ -37,7 +37,7 @@ public class BlackView: NSView
 
     public override func draw( _ rect: NSRect )
     {
-        NSColor.black.withAlphaComponent( self.alpha ).setFill()
+        self.color.setFill()
         self.bounds.fill()
     }
 }

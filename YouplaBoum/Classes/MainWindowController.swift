@@ -32,13 +32,32 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
     @objc private dynamic var info:          String?
     @objc private dynamic var images       = [ Image ]()
     @objc private dynamic var items        = [ ImageItem ]()
+    @objc private dynamic var currentImage:  Image?
     @objc private dynamic var currentIndex = -1
     {
         didSet
         {
             if self.currentIndex >= 0
             {
-                self.currentImage = self.images[ self.currentIndex ]
+                let current  = self.images[ self.currentIndex ]
+                let previous = self.currentIndex - 1 >= 0                ? self.images[ self.currentIndex - 1 ] : nil
+                let next     = self.currentIndex + 1 < self.images.count ? self.images[ self.currentIndex + 1 ] : nil
+
+                self.images.forEach
+                {
+                    if $0 !== current, $0 !== previous, $0 !== next
+                    {
+                        $0.unloadSourceImage()
+                    }
+                    else
+                    {
+                        $0.loadSourceImage()
+                    }
+
+                    $0.isHighlighted = $0 === current
+                }
+
+                self.currentImage = current
                 self.info         = "\( self.currentIndex + 1 ) of \( self.images.count )"
 
                 if self.collectionView?.numberOfItems( inSection: 0 ) ?? 0 > self.currentIndex
@@ -56,24 +75,10 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
         }
     }
 
-    @objc private dynamic var currentImage:  Image?
-    {
-        willSet
-        {
-            self.currentImage?.unloadSourceImage()
+    private var averageColorObserver: NSKeyValueObservation?
 
-            self.currentImage?.isHighlighted = false
-        }
-
-        didSet
-        {
-            self.currentImage?.loadSourceImage()
-
-            self.currentImage?.isHighlighted = true
-        }
-    }
-
-    @IBOutlet private var collectionView: NSCollectionView?
+    @IBOutlet private var collectionView:      NSCollectionView?
+    @IBOutlet private var imageBackgroundView: BackgroundView?
 
     public init( url: URL )
     {
@@ -98,6 +103,11 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
         self.load()
 
         self.window?.title = "YouplaBoum! - \( self.url.deletingLastPathComponent().lastPathComponent )/\( self.url.lastPathComponent )"
+
+        self.averageColorObserver = self.observe( \.currentImage?.averageColor )
+        {
+            [ weak self ] _, _ in self?.imageBackgroundView?.color = self?.currentImage?.averageColor ?? .black
+        }
 
         NSEvent.addLocalMonitorForEvents( matching: .keyDown )
         {
