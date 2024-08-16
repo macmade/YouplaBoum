@@ -45,7 +45,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="100" minWidth="40" maxWidth="1000" id="YSI-qe-CVh">
+                                    <tableColumn identifier="AutomaticTableColumnIdentifier.0" width="102" minWidth="40" maxWidth="1000" id="YSI-qe-CVh">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -58,7 +58,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="JPS-x4-mYU">
-                                                <rect key="frame" x="0.0" y="2" width="106" height="11"/>
+                                                <rect key="frame" x="0.0" y="2" width="108" height="11"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="9WF-ey-YEd">
@@ -69,8 +69,8 @@
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="JPS-x4-mYU" name="toolTip" keyPath="objectValue.name" id="Ho1-8b-Ega"/>
                                                             <binding destination="JPS-x4-mYU" name="value" keyPath="objectValue.name" id="C0i-fB-A3T"/>
+                                                            <binding destination="JPS-x4-mYU" name="toolTip" keyPath="objectValue.name" id="Ho1-8b-Ega"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -86,7 +86,7 @@
                                             </tableCellView>
                                         </prototypeCellViews>
                                     </tableColumn>
-                                    <tableColumn identifier="AutomaticTableColumnIdentifier.1" width="164" minWidth="40" maxWidth="1000" id="2ML-rS-9BD">
+                                    <tableColumn identifier="AutomaticTableColumnIdentifier.1" width="166" minWidth="40" maxWidth="1000" id="2ML-rS-9BD">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -99,7 +99,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="qkE-ac-gb8">
-                                                <rect key="frame" x="106" y="2" width="170" height="11"/>
+                                                <rect key="frame" x="108" y="2" width="172" height="11"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3MP-Gr-LCW">
@@ -110,12 +110,12 @@
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="qkE-ac-gb8" name="toolTip" keyPath="objectValue" id="Edx-Te-GEF">
+                                                            <binding destination="qkE-ac-gb8" name="value" keyPath="objectValue" id="8CF-At-V56">
                                                                 <dictionary key="options">
                                                                     <string key="NSValueTransformerName">MetadataTagValue</string>
                                                                 </dictionary>
                                                             </binding>
-                                                            <binding destination="qkE-ac-gb8" name="value" keyPath="objectValue" id="8CF-At-V56">
+                                                            <binding destination="qkE-ac-gb8" name="toolTip" keyPath="objectValue" id="Edx-Te-GEF">
                                                                 <dictionary key="options">
                                                                     <string key="NSValueTransformerName">MetadataTagValue</string>
                                                                 </dictionary>

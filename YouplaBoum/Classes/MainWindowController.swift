@@ -25,7 +25,7 @@
 import Cocoa
 
 @objc
-public class MainWindowController: NSWindowController, NSCollectionViewDelegate, NSCollectionViewDataSource
+public class MainWindowController: NSWindowController, NSCollectionViewDelegate, NSCollectionViewDataSource, NSMenuDelegate
 {
     @objc private dynamic var url:           URL
     @objc private dynamic var progress:      Progress?
@@ -85,6 +85,7 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
     @IBOutlet private var collectionView:        NSCollectionView?
     @IBOutlet private var imageBackgroundView:   BackgroundView?
     @IBOutlet private var infoViewContainer:     NSView?
+    @IBOutlet private var imageMenu:             NSMenu?
 
     public init( url: URL )
     {
@@ -425,5 +426,91 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
         }
 
         self.currentIndex = indexPath.item
+    }
+
+    @IBAction
+    private func showMenu( _ sender: Any? )
+    {
+        guard let view  = sender as? NSView,
+              let menu  = self.imageMenu,
+              let event = NSApp.currentEvent
+        else
+        {
+            NSSound.beep()
+
+            return
+        }
+
+        NSMenu.popUpContextMenu( menu, with: event, for: view )
+    }
+
+    @IBAction
+    private func showInFinder( _ sender: Any? )
+    {
+        guard let url = self.currentImage?.url
+        else
+        {
+            NSSound.beep()
+
+            return
+        }
+
+        NSWorkspace.shared.selectFile( url.path( percentEncoded: false ), inFileViewerRootedAtPath: "" )
+    }
+
+    @IBAction
+    private func openWithExternalEditor( _ sender: Any? )
+    {
+        guard let url = self.currentImage?.url
+        else
+        {
+            NSSound.beep()
+
+            return
+        }
+
+        NSWorkspace.shared.open( url )
+    }
+
+    @IBAction
+    private func share( _ sender: Any? )
+    {
+        guard let url  = self.currentImage?.url,
+              let view = self.window?.contentView
+        else
+        {
+            NSSound.beep()
+
+            return
+        }
+
+        NSSharingServicePicker( items: [ url ] ).show( relativeTo: .zero, of: view, preferredEdge: .maxX )
+    }
+
+    public func menuWillOpen( _ menu: NSMenu )
+    {
+        menu.items.forEach
+        {
+            if $0.identifier?.rawValue == "OpenWith"
+            {
+                $0.isHidden = true
+            }
+        }
+
+        guard let url = self.currentImage?.url
+        else
+        {
+            return
+        }
+
+        menu.items.forEach
+        {
+            if $0.identifier?.rawValue == "OpenWith",
+               let menu = Application.createMenu( for: url )
+            {
+                $0.isHidden = false
+                $0.submenu  = menu
+            }
+        }
     }
 }

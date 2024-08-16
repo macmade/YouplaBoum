@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051A78A02C6FD558006328DF /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051A789F2C6FD558006328DF /* Application.swift */; };
 		055FBBA12C6F7B68003B51AC /* NonVibrantImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FBBA02C6F7B68003B51AC /* NonVibrantImageView.swift */; };
 		055FBBA32C6F81F1003B51AC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FBBA22C6F81F1003B51AC /* InfoViewController.swift */; };
 		055FBBA52C6F81FD003B51AC /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055FBBA42C6F81FD003B51AC /* InfoViewController.xib */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		051A789F2C6FD558006328DF /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		055FBBA02C6F7B68003B51AC /* NonVibrantImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonVibrantImageView.swift; sourceTree = "<group>"; };
 		055FBBA22C6F81F1003B51AC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		055FBBA42C6F81FD003B51AC /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				05646BEE2685055F00707676 /* AboutWindowController.swift */,
 				05646BF02685058700707676 /* AboutWindowController.xib */,
+				051A789F2C6FD558006328DF /* Application.swift */,
 				05646BAF2685020A00707676 /* ApplicationDelegate.swift */,
 				05B999842C6EDFC100DF4C08 /* ArrayIsEmpty.swift */,
 				05B999862C6EE01600DF4C08 /* ArrayIsNotEmpty.swift */,
@@ -187,12 +190,12 @@
 				055FBBA22C6F81F1003B51AC /* InfoViewController.swift */,
 				055FBBA42C6F81FD003B51AC /* InfoViewController.xib */,
 				05B999762C6ED45500DF4C08 /* MainWindowController.swift */,
-				055FBBAC2C6FC380003B51AC /* Preferences.swift */,
 				05B9997B2C6ED4BD00DF4C08 /* MainWindowController.xib */,
 				055FBBA82C6F84C5003B51AC /* MetadataTag.swift */,
 				055FBBAA2C6F89BC003B51AC /* MetadataTagValue.swift */,
 				055FBBA02C6F7B68003B51AC /* NonVibrantImageView.swift */,
 				055FBBA62C6F82B7003B51AC /* NSView.swift */,
+				055FBBAC2C6FC380003B51AC /* Preferences.swift */,
 				05B9998E2C6EE6C100DF4C08 /* Progress.swift */,
 				05B9997E2C6ED8D000DF4C08 /* RuntimeError.swift */,
 				05B999922C6F268400DF4C08 /* SizeToString.swift */,
@@ -447,6 +450,7 @@
 				05B9998F2C6EE6C100DF4C08 /* Progress.swift in Sources */,
 				05B999912C6EFD5100DF4C08 /* ImageItem.swift in Sources */,
 				05B999852C6EDFC100DF4C08 /* ArrayIsEmpty.swift in Sources */,
+				051A78A02C6FD558006328DF /* Application.swift in Sources */,
 				05646BEF2685055F00707676 /* AboutWindowController.swift in Sources */,
 				05B999772C6ED45500DF4C08 /* MainWindowController.swift in Sources */,
 				05B999932C6F268400DF4C08 /* SizeToString.swift in Sources */,

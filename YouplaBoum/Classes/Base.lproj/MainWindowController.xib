@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="collectionView" destination="w24-IQ-GrK" id="vux-v9-umf"/>
                 <outlet property="imageBackgroundView" destination="XuP-IS-k4X" id="rJt-88-fr2"/>
+                <outlet property="imageMenu" destination="e1P-Pg-MVi" id="Wn1-gV-flJ"/>
                 <outlet property="infoViewContainer" destination="xcz-Ae-qcT" id="B3w-31-FTH"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="Wkc-Rf-cl3"/>
             </connections>
@@ -234,7 +235,7 @@
                                                 </constraints>
                                                 <shadow key="shadow" blurRadius="2">
                                                     <size key="offset" width="1" height="-1"/>
-                                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="color" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </shadow>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="f87-wR-Cei">
                                                     <imageReference key="image" image="checkmark.circle.fill" catalog="system" symbolScale="default" renderingMode="template"/>
@@ -375,11 +376,32 @@
                                                     </binding>
                                                 </connections>
                                             </customView>
+                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="70w-LX-EtG">
+                                                <rect key="frame" x="20" y="471" width="24" height="30"/>
+                                                <shadow key="shadow" blurRadius="2">
+                                                    <size key="offset" width="1" height="1"/>
+                                                    <color key="color" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </shadow>
+                                                <buttonCell key="cell" type="square" title="Actions" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GdW-ET-Br5">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <imageReference key="image" image="ellipsis.circle.fill" catalog="system" symbolScale="default" renderingMode="template"/>
+                                                </buttonCell>
+                                                <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="s5x-Zi-z63"/>
+                                                    <constraint firstAttribute="width" constant="24" id="ts7-86-Dyd"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="showMenu:" target="-2" id="q98-LD-Tjw"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="xcz-Ae-qcT" firstAttribute="leading" secondItem="XuP-IS-k4X" secondAttribute="leading" constant="20" symbolic="YES" id="0Id-c0-nR3"/>
                                             <constraint firstAttribute="bottom" secondItem="a2B-Al-fBE" secondAttribute="bottom" id="5Ca-DI-nLz"/>
                                             <constraint firstAttribute="trailing" secondItem="apb-Cs-w2a" secondAttribute="trailing" constant="20" symbolic="YES" id="8b8-Vt-5sj"/>
+                                            <constraint firstItem="lO6-Fh-YxI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="70w-LX-EtG" secondAttribute="trailing" constant="8" symbolic="YES" id="Hxk-il-VZt"/>
                                             <constraint firstAttribute="trailing" secondItem="a2B-Al-fBE" secondAttribute="trailing" id="Mkf-kq-TKB"/>
                                             <constraint firstItem="a2B-Al-fBE" firstAttribute="leading" secondItem="XuP-IS-k4X" secondAttribute="leading" id="Mux-U0-muw"/>
                                             <constraint firstItem="lO6-Fh-YxI" firstAttribute="centerX" secondItem="XuP-IS-k4X" secondAttribute="centerX" id="RIn-ta-jkY"/>
@@ -387,8 +409,9 @@
                                             <constraint firstItem="a2B-Al-fBE" firstAttribute="top" secondItem="XuP-IS-k4X" secondAttribute="top" id="bcQ-zK-xwE"/>
                                             <constraint firstItem="apb-Cs-w2a" firstAttribute="centerY" secondItem="lO6-Fh-YxI" secondAttribute="centerY" id="dNx-SQ-Nae"/>
                                             <constraint firstAttribute="trailing" secondItem="Jxs-I9-jU4" secondAttribute="trailing" id="evp-W1-G7J"/>
+                                            <constraint firstItem="70w-LX-EtG" firstAttribute="centerY" secondItem="lO6-Fh-YxI" secondAttribute="centerY" id="hoO-Lm-DjZ"/>
                                             <constraint firstItem="apb-Cs-w2a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lO6-Fh-YxI" secondAttribute="trailing" constant="8" symbolic="YES" id="jag-QZ-bia"/>
-                                            <constraint firstItem="lO6-Fh-YxI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XuP-IS-k4X" secondAttribute="leading" constant="20" symbolic="YES" id="mRu-Y7-w0B"/>
+                                            <constraint firstItem="70w-LX-EtG" firstAttribute="leading" secondItem="XuP-IS-k4X" secondAttribute="leading" constant="20" symbolic="YES" id="lUA-Om-db0"/>
                                             <constraint firstItem="Jxs-I9-jU4" firstAttribute="leading" secondItem="XuP-IS-k4X" secondAttribute="leading" id="oas-KW-Fea"/>
                                             <constraint firstItem="lO6-Fh-YxI" firstAttribute="top" secondItem="XuP-IS-k4X" secondAttribute="top" constant="30" id="ocR-yU-xXB"/>
                                             <constraint firstAttribute="bottom" secondItem="Jxs-I9-jU4" secondAttribute="bottom" id="td8-C0-mzg"/>
@@ -486,8 +509,43 @@
             </view>
             <point key="canvasLocation" x="377" y="161.5"/>
         </window>
+        <menu id="e1P-Pg-MVi">
+            <items>
+                <menuItem title="Show in Finder..." id="dbA-zK-sSi">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="showInFinder:" target="-2" id="HAU-D6-q8R"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="lXM-5j-shc"/>
+                <menuItem title="Open with External Editor..." id="vkv-aF-gQ5">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openWithExternalEditor:" target="-2" id="w88-a8-U2T"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Open with" identifier="OpenWith" id="pZL-HC-3UA">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openWithExternalEditor:" target="-2" id="DAs-2d-nVX"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="5tO-Ys-0HC"/>
+                <menuItem title="Share..." id="8IM-2h-J7t">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="share:" target="-2" id="nTv-mF-DZE"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="delegate" destination="-2" id="Sf1-3T-JAM"/>
+            </connections>
+            <point key="canvasLocation" x="258" y="-241"/>
+        </menu>
     </objects>
     <resources>
         <image name="checkmark.circle.fill" catalog="system" width="15" height="15"/>
+        <image name="ellipsis.circle.fill" catalog="system" width="15" height="15"/>
     </resources>
 </document>
