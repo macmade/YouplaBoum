@@ -27,19 +27,7 @@ import Cocoa
 @objc
 public class ImageItem: NSCollectionViewItem
 {
-    @objc public private( set ) dynamic var image: Image
-
-    public init( image: Image )
-    {
-        self.image = image
-
-        super.init( nibName: nil, bundle: nil )
-    }
-
-    required init?( coder: NSCoder )
-    {
-        nil
-    }
+    @objc public dynamic var image: Image?
 
     public override var nibName: NSNib.Name?
     {

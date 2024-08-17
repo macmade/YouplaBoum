@@ -27,11 +27,12 @@ import Cocoa
 @objc
 public class MainWindowController: NSWindowController, NSCollectionViewDelegate, NSCollectionViewDataSource, NSMenuDelegate
 {
+    private let itemID = NSUserInterfaceItemIdentifier( "ImageItem" )
+
     @objc private dynamic var url:           URL
     @objc private dynamic var progress:      Progress?
     @objc private dynamic var info:          String?
     @objc private dynamic var images       = [ Image ]()
-    @objc private dynamic var items        = [ ImageItem ]()
     @objc private dynamic var showInfo     = Preferences.shared.showInfo
     @objc private dynamic var currentImage:  Image?
     @objc private dynamic var currentIndex = -1
@@ -107,6 +108,7 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
     public override func windowDidLoad()
     {
         super.windowDidLoad()
+        self.collectionView?.register( NSNib( nibNamed: "ImageItem", bundle: nil ), forItemWithIdentifier: self.itemID )
         self.load()
 
         self.window?.title = "YouplaBoum! - \( self.url.deletingLastPathComponent().lastPathComponent )/\( self.url.lastPathComponent )"
@@ -264,7 +266,6 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
                     else
                     {
                         self.images = result
-                        self.items  = result.map { ImageItem( image: $0 ) }
 
                         self.collectionView?.reloadData()
 
@@ -359,7 +360,6 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
                         else
                         {
                             self.images       = images
-                            self.items        = images.map { ImageItem( image: $0 ) }
                             self.currentIndex = 0
 
                             self.collectionView?.reloadData()
@@ -399,19 +399,27 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
 
     public func collectionView( _ collectionView: NSCollectionView, numberOfItemsInSection section: Int ) -> Int
     {
-        self.items.count
+        self.images.count
     }
 
     public func collectionView( _ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath ) -> NSCollectionViewItem
     {
-        self.items[ indexPath.item ]
+        guard let item = collectionView.makeItem( withIdentifier: self.itemID, for: indexPath ) as? ImageItem
+        else
+        {
+            return NSCollectionViewItem()
+        }
+
+        item.image = self.images[ indexPath.item ]
+
+        return item
     }
 
     public func collectionView( _ collectionView: NSCollectionView, willDisplay item: NSCollectionViewItem, forRepresentedObjectAt indexPath: IndexPath )
     {
         if let item = item as? ImageItem
         {
-            item.image.generateThumbnail()
+            item.image?.generateThumbnail()
         }
     }
 
@@ -419,7 +427,7 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
     {
         if let item = item as? ImageItem
         {
-            item.image.cancelThumbnailGeneration()
+            item.image?.cancelThumbnailGeneration()
         }
     }
 
