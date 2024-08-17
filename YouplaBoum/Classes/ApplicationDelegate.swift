@@ -30,9 +30,16 @@ public class ApplicationDelegate: NSObject, NSApplicationDelegate, NSWindowDeleg
     @objc private dynamic var aboutWindowController = AboutWindowController()
     @objc private dynamic var windowControllers     = [ MainWindowController ]()
 
+    private var updater = GitHubUpdater( owner: "macmade", repository: "YouplaBoum" )
+
     public func applicationDidFinishLaunching( _ notification: Notification )
     {
         self.openDocument( nil )
+
+        DispatchQueue.main.asyncAfter( deadline: .now() + .seconds( 2 ) )
+        {
+            self.updater?.checkForUpdates()
+        }
     }
 
     public func applicationWillTerminate( _ notification: Notification )

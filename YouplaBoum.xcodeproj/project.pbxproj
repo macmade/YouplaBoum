@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		051A78A02C6FD558006328DF /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051A789F2C6FD558006328DF /* Application.swift */; };
+		051A78A22C70D993006328DF /* GitHubUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051A78A12C70D993006328DF /* GitHubUpdater.swift */; };
 		055FBBA12C6F7B68003B51AC /* NonVibrantImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FBBA02C6F7B68003B51AC /* NonVibrantImageView.swift */; };
 		055FBBA32C6F81F1003B51AC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055FBBA22C6F81F1003B51AC /* InfoViewController.swift */; };
 		055FBBA52C6F81FD003B51AC /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055FBBA42C6F81FD003B51AC /* InfoViewController.xib */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		051A789F2C6FD558006328DF /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		051A78A12C70D993006328DF /* GitHubUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUpdater.swift; sourceTree = "<group>"; };
 		055FBBA02C6F7B68003B51AC /* NonVibrantImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonVibrantImageView.swift; sourceTree = "<group>"; };
 		055FBBA22C6F81F1003B51AC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		055FBBA42C6F81FD003B51AC /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				05B999822C6EDF3300DF4C08 /* BackgroundView.swift */,
 				05B999942C6F268E00DF4C08 /* BytesToString.swift */,
 				05B999882C6EE18D00DF4C08 /* Capsule.swift */,
+				051A78A12C70D993006328DF /* GitHubUpdater.swift */,
 				05CB9D1E2C6F427900314AAC /* Highlight.swift */,
 				05B9998A2C6EE46A00DF4C08 /* Image.swift */,
 				05B999902C6EFD5100DF4C08 /* ImageItem.swift */,
@@ -435,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051A78A22C70D993006328DF /* GitHubUpdater.swift in Sources */,
 				055FBBA12C6F7B68003B51AC /* NonVibrantImageView.swift in Sources */,
 				05646BB42685020A00707676 /* ApplicationDelegate.swift in Sources */,
 				055FBBAD2C6FC380003B51AC /* Preferences.swift in Sources */,
