@@ -342,7 +342,13 @@ public class MainWindowController: NSWindowController, NSCollectionViewDelegate,
 
                 do
                 {
-                    let images = try self.loadImages()
+                    let images = try self.loadImages().sorted
+                    {
+                        let s1 = $0.url.path( percentEncoded: false )
+                        let s2 = $1.url.path( percentEncoded: false )
+
+                        return s1.localizedCaseInsensitiveCompare( s2 ) == .orderedAscending
+                    }
 
                     DispatchQueue.main.async
                     {
